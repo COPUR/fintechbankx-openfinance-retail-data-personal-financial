@@ -1,0 +1,7 @@
+bounded_context: "open_finance"
+service_id: "svc-of-personal-financial-data"
+application_id: "app.of.personal-financial-data"
+data_owner_pattern: "db_of_personal_financial_data_prod"
+event_namespace: "evt.of.account"
+owning_squad: "Retail Financial Data Squad"
+wave: "2"
