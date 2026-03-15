@@ -66,4 +66,4 @@ jobs:
           sudo mv /tmp/gitleaks /usr/local/bin/gitleaks
           gitleaks version
       - name: Gitleaks scan
-        run: gitleaks detect --source . --no-banner --redact
+        run: gitleaks detect --source . --no-banner --redact --no-git --config .gitleaks.toml

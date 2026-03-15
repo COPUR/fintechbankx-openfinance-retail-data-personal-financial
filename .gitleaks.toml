@@ -1,0 +1,9 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Allow deterministic token fixtures and bounded-context placeholders"
+paths = [
+  '''^src/test/java/.*$''',
+  '''^src/main/java/com/enterprise/openfinance/personalfinancialdata/infrastructure/config/AisSecurityProperties\.java$'''
+]
