@@ -1,0 +1,4 @@
+src/main/java/com/enterprise/openfinance/personalfinancialdata/infrastructure/config/AisSecurityProperties.java:generic-api-key:10
+src/test/java/com/enterprise/openfinance/personalfinancialdata/infrastructure/functional/AccountInformationUatTest.java:generic-api-key:35
+src/test/java/com/enterprise/openfinance/personalfinancialdata/infrastructure/integration/AccountInformationApiIntegrationTest.java:generic-api-key:36
+src/test/java/com/enterprise/openfinance/personalfinancialdata/infrastructure/security/SecurityTestTokenFactory.java:generic-api-key:25
