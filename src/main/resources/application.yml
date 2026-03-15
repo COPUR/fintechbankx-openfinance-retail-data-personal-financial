@@ -1,0 +1,41 @@
+openfinance:
+  personalfinancialdata:
+    persistence:
+      mode: ${OPENFINANCE_PFD_PERSISTENCE_MODE:mongodb}
+    cache:
+      mode: ${OPENFINANCE_PFD_CACHE_MODE:redis}
+      ttl: ${OPENFINANCE_PFD_CACHE_TTL:30s}
+      key-prefix: ${OPENFINANCE_PFD_CACHE_KEY_PREFIX:openfinance:personalfinancialdata}
+    security:
+      jwt-secret: ${OPENFINANCE_PFD_JWT_SECRET:RUNTIME_MANAGED__USE_SYSTEM_SECRETS_API}
+      issuer: ${OPENFINANCE_PFD_JWT_ISSUER:}
+      audience: ${OPENFINANCE_PFD_JWT_AUDIENCE:}
+      dpop-required: ${OPENFINANCE_PFD_DPOP_REQUIRED:true}
+      dpop-max-proof-age: ${OPENFINANCE_PFD_DPOP_MAX_PROOF_AGE:PT5M}
+      dpop-clock-skew: ${OPENFINANCE_PFD_DPOP_CLOCK_SKEW:PT30S}
+
+spring:
+  application:
+    name: ${OPENFINANCE_PFD_SERVICE_NAME:openfinance-personal-financial-data-service}
+  data:
+    mongodb:
+      uri: ${OPENFINANCE_PFD_MONGODB_URI:mongodb://localhost:27017/open_finance_personal_financial_data}
+    redis:
+      url: ${OPENFINANCE_PFD_REDIS_URL:redis://localhost:6379}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  metrics:
+    tags:
+      service: ${spring.application.name}
+
+logging:
+  pattern:
+    level: "%5p [trace_id=%X{trace_id:-} interaction_id=%X{interaction_id:-}]"
