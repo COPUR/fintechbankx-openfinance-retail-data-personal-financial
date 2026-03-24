@@ -2,8 +2,8 @@
 
 ## Repository
 
-- Name: \
-- Generated: \
+- Name: fintechbankx-openfinance-retail-data-personal-financial
+- Generated: 2026-03-24
 
 ## Objective
 
